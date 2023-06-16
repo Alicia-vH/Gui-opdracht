@@ -1,0 +1,191 @@
+body
+/* zonder @media = desktop, default */
+{
+    display: grid;
+    margin: 0px;
+    min-height: 100vh;
+    grid-template-columns: auto auto auto auto;
+    grid-template-areas: 
+    "header header header header"
+    "firstDiv secondDiv thirdDiv fourthDiv"
+    "firstArticle firstArticle secondArticle secondArticle"
+    "footer footer footer footer";
+    grid-template-rows: 2fr 1fr 5fr 1fr;
+}
+
+.block {
+    border: 1px solid black;
+}
+
+header {
+    background-color: red;
+
+    grid-area: header;
+}
+
+header div {
+    width: fit-content;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+#firstDiv {
+    background-color: orange;
+    grid-area: firstDiv;
+}
+
+#secondDiv {
+    background-color: yellow;
+    grid-area: secondDiv;
+}
+
+#thirdDiv {
+    background-color: yellowgreen;
+    grid-area: thirdDiv;
+}
+
+#fourthDiv {
+    background-color: green;
+    grid-area: fourthDiv;
+}
+
+#firstArticle {
+    background-color: deepskyblue;
+    grid-area: firstArticle;
+}
+
+#secondArticle {
+    background-color: dodgerblue;
+    grid-area: secondArticle;
+}
+
+footer {
+    background-color: darkblue;
+    grid-area: footer;
+}
+
+#modeDesktop{
+    display: block;
+}
+#modeTablet{
+    display: none;
+}
+#modePhonePortrait{
+    display: none;
+}
+#modePhoneLandscape{
+    display: none;
+}
+
+
+
+/* vanaf hier @media regels toevoegen */
+
+    @media  screen and (max-width: 1280px){
+
+        /*tablet mode*/
+        body{
+            
+            grid-template-areas: 
+            "header header header header"
+            "firstDiv secondDiv thirdDiv fourthDiv"
+            "firstArticle secondArticle";
+
+            grid-template-rows: 2fr 1fr 5fr ;
+
+        }
+        #modeTablet 
+        {
+            display: block;
+        }
+        #modeDesktop{
+            display: none;
+        }
+        #modePhonePortrait{
+            display: none;
+        }
+
+    
+    }
+
+
+ /*phone portrait*/
+       @media screen and (max-width: 498px){
+        body{
+            
+            grid-template-areas: 
+            "header header header header"
+            "firstDiv firstDiv firstDiv firstDiv"
+            "secondDiv secondDiv secondDiv secondDiv"
+            "thirdDiv thirdDiv thirdDiv thirdDiv"
+            "fourthDiv fourthDiv fourthDiv fourthDiv"
+            "firstArticle firstArticle firstArticle firstArticle"
+            "secondArticle secondArticle secondArticle secondArticle";
+
+            grid-template-rows: 2fr 1fr 1fr 1fr 1fr 5fr 5fr;
+
+        }
+        footer{
+            display: none;
+        }
+    
+        #modePhonePortrait 
+        {
+            display: block;
+            
+        }
+        #modeDesktop{
+            display: none;
+        }
+        #modePhoneLandscape{
+            display: none;
+        }
+        #modeTablet{
+            display: none;
+        }
+        }
+
+
+        /*phone landscape*/
+      @media screen and (max-width: 800px) and (max-height:360px){
+        
+        body{
+            
+            grid-template-areas: 
+            "header header header header"
+            "firstDiv firstDiv secondDiv secondDiv"
+            "thirdDiv thirdDiv fourthDiv fourthDiv"
+            "firstArticle firstArticle firstArticle firstArticle"
+            "secondArticle secondArticle secondArticle secondArticle";
+             
+            grid-template-rows: 2fr 1fr 1fr 5fr 5fr;
+    
+        }
+            footer{
+                display: none;
+            }
+            #modePhoneLandscape 
+            {
+                display: block;
+                
+            }
+            #modeDesktop{
+                display: none;
+            }
+            #modePhonePortrait{
+                display: none;
+            }
+           #modeTablet{
+                display: none;
+           }
+    
+
+      }
+
+    
+    
+
+
+
+
